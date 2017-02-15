@@ -14,6 +14,5 @@ $(function(){
 
   var contactList = new views.ContactView({collection : myContacts});
   $('.contact-column').append(contactList.render().el);
-
-  console.log(myContacts.fetch());
+  myContacts.fetch();
 });
