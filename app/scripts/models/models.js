@@ -1,16 +1,16 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 
-var Contacts = Backbone.Model.extend({
-  defaults: {
-    'name': "n/a",
-    'phone': "n/a",
-    'email':'n/a',
-    'twitter':'n/a',
-    'linkedin':'n/a'
-  }
+var Contact = Backbone.Model.extend({
+  idAttribute: '_id'
+});
+
+var ContactCollection = Backbone.Collection.extend({
+  model : Contact,
+  url : "https://tiny-lasagna-server.herokuapp.com/collections/nathancontacts"
 });
 
 module.exports = {
-  'Contacts' : Contacts
+  'Contact' : Contact,
+  'ContactCollection' : ContactCollection
 };
